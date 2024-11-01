@@ -16,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={cn('antialiased', inter.className)}>{children}</body>
+    <html lang="pt-BR" className="h-full">
+      <body
+        className={cn('relative h-full w-full antialiased', inter.className)}
+      >
+        {children}
+      </body>
     </html>
   )
 }
