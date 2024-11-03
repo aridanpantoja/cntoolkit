@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,9 +20,14 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="h-full">
       <body
-        className={cn('relative h-full w-full antialiased', inter.className)}
+        className={cn(
+          'relative flex h-full w-full flex-col antialiased',
+          inter.className,
+        )}
       >
-        {children}
+        <Navbar />
+        <main className="grow">{children}</main>
+        <Footer />
       </body>
     </html>
   )

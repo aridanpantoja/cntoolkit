@@ -47,7 +47,7 @@ const formFields = [
   },
 ]
 
-export function TransceiverForm() {
+export function OpticalFiberForm() {
   const form = useForm<transceiverData>({
     resolver: zodResolver(transceiverSchema),
     defaultValues: {
