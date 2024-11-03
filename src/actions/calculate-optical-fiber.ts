@@ -2,13 +2,13 @@
 
 import { transceivers } from '@/data/transceivers'
 import {
-  transceiverData,
-  transceiverSchema,
-} from '@/schemas/transceiver-schema'
+  opticalFiberData,
+  opticalFiberSchema,
+} from '@/schemas/optical-fiber-schema'
 
-export async function calculateTransceiver(values: transceiverData) {
+export async function calculateOpticalFiber(values: opticalFiberData) {
   try {
-    const parsedValues = transceiverSchema.safeParse(values)
+    const parsedValues = opticalFiberSchema.safeParse(values)
 
     if (!parsedValues.success) {
       throw new Error('validação dos valores falhou')

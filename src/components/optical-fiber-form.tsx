@@ -1,13 +1,13 @@
 'use client'
 
-import { calculateTransceiver } from '@/actions/calculate-transceiver'
+import { calculateOpticalFiber } from '@/actions/calculate-optical-fiber'
 import {
-  transceiverData,
-  transceiverSchema,
-} from '@/schemas/transceiver-schema'
+  opticalFiberData,
+  opticalFiberSchema,
+} from '@/schemas/optical-fiber-schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -15,8 +15,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from './ui/form'
-import { Input } from './ui/input'
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 
 type formFieldsProps = {
   name: string
@@ -48,18 +48,18 @@ const formFields = [
 ]
 
 export function OpticalFiberForm() {
-  const form = useForm<transceiverData>({
-    resolver: zodResolver(transceiverSchema),
+  const form = useForm<opticalFiberData>({
+    resolver: zodResolver(opticalFiberSchema),
     defaultValues: {
       potency: '',
       transmission: '',
       distance: '',
       amendment: '',
-    } as unknown as transceiverData,
+    } as unknown as opticalFiberData,
   })
 
-  async function onSubmit(values: transceiverData) {
-    const response = await calculateTransceiver(values)
+  async function onSubmit(values: opticalFiberData) {
+    const response = await calculateOpticalFiber(values)
     console.log({ response })
   }
 
@@ -73,7 +73,7 @@ export function OpticalFiberForm() {
           <FormField
             key={formField.name}
             control={form.control}
-            name={formField.name as keyof transceiverData}
+            name={formField.name as keyof opticalFiberData}
             render={({ field }) => (
               <FormItem>
                 <FormLabel>{formField.label}</FormLabel>

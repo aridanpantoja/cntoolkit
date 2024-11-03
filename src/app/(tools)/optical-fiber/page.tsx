@@ -5,13 +5,11 @@ export default function OpticalFiber() {
   return (
     <>
       <MaxWidthWrapper>
-        <h1>Optical Fiber</h1>
+        <h1 className="text-3xl font-bold md:text-5xl">Optical Fiber</h1>
 
-        <p>
+        <p className="max-w-prose">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
-          sunt iure temporibus expedita sequi. Illo ab dolor impedit hic quae
-          odio libero tenetur, fugit provident, recusandae quia est eos
-          reprehenderit!
+          sunt iure temporibus expedita sequi.
         </p>
 
         <div className="grid grid-cols-2">
